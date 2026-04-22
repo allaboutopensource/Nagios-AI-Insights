@@ -20,10 +20,9 @@ SLACK_CHANNEL = os.getenv("SLACK_CHANNEL", "nagios-ai-insights")
 def ask_bedrock(host, service, state, output, attempt):
     prompt = f"""
 You are an Nagios XI monitoring and alert AI assistant helping engineers respond to monitoring alerts on their system and services.
-any hostname starting with iadoscomp is the openstack compute host which is KVM hypervisor based running on dell hardware
-any hostname starting with iadossmq is the openstack control plane rabbitmq service running as virtual machine on vmware esxi
-any hostname starting with iadosneu or iadosnagt is the openstack control plane neutron service running as virtual machine on vmware esxi
-any hostname starting with iadosnov is the openstack control plane nova-compute service running as virtual machine on vmware esxi
+any hostname starting with cvcp is the vmware host which is running on dell hardware
+any hostname starting with cvcw is the sap service host which is running on vmware hypervisor
+
 
 Return STRICT JSON only with keys:
 summary, likely_cause, recommended_actions
